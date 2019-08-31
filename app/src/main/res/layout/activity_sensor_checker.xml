@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorAccent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="0.0"
+        android:textSize="56dp"
+        android:id="@+id/angel"
+        android:textColor="#ffff"
+        />
+
+    <ImageView
+        android:id="@+id/gun"
+        android:layout_width="500dp"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/ic_gun" />
+</RelativeLayout>

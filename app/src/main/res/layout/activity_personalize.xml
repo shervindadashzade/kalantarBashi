@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="vertical">
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="شخصی سازی"
+             android:textColor="@color/colorAccent"
+             android:textSize="36dp"
+             android:textStyle="bold"
+             android:layout_marginTop="65dp"
+             android:textAlignment="center"/>
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:textColor="#2C2C2C"
+             android:text="اسم و عکس کاراکترتو انتخاب کن"
+             android:textAlignment="center"
+             android:textSize="18dp"
+             android:layout_marginTop="24dp"
+             />
+
+             <EditText
+                 android:id="@+id/PrUsername"
+                 android:layout_width="232dp"
+                 android:layout_height="35dp"
+                 android:singleLine="true"
+                 android:layout_marginTop="15dp"
+                 android:textSize="14dp"
+                 android:hint="اسمتو وارد کن"
+                 android:layout_gravity="center"
+                 />
+
+         <RadioGroup
+             android:layout_gravity="center"
+             android:layout_width="101dp"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="50dp"
+             android:id="@+id/RGuserPic">
+
+             <RadioButton
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:drawableRight="@drawable/face1"
+                 android:layout_marginTop="22dp"
+                 android:text="1"
+                 />
+             <RadioButton
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:drawableRight="@drawable/face2"
+                 android:layout_marginTop="22dp"
+                 android:text="2"
+                 />
+         </RadioGroup>
+     </LinearLayout>
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ذخیره"
+        android:background="@color/colorAccent"
+        android:layout_alignParentBottom="true"
+        android:textSize="24dp"
+        android:textColor="#FFFFFF"
+        />
+</RelativeLayout>
