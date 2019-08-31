@@ -1,12 +1,14 @@
 package com.example.kalantarbashi.Core;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
 import com.example.kalantarbashi.ConnectActivity;
 import com.example.kalantarbashi.ListeningActivity;
 
+import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.net.Socket;
 
@@ -32,6 +34,11 @@ public class ConnectThread extends AsyncTask<Void,String,Void> {
             publishProgress("write = "+data);
             dos.flush();
             dos.close();
+            DataInputStream dis = new DataInputStream(socket.getInputStream());
+            String response = (String) dis.readUTF();
+            if(response.equals("connect")){
+                publishProgress("connect");
+            }
         }catch (Exception e){
             publishProgress(e.toString());
         }
@@ -40,7 +47,11 @@ public class ConnectThread extends AsyncTask<Void,String,Void> {
 
     @Override
     protected void onProgressUpdate(String... values) {
-        Toast.makeText(context,values[0],Toast.LENGTH_LONG).show();
+        if(values[0].equals("connect")){
+            context.startActivity(new Intent(context,ListeningActivity.class));
+        }else {
+            Toast.makeText(context, values[0], Toast.LENGTH_LONG).show();
+        }
         super.onProgressUpdate(values);
     }
 }

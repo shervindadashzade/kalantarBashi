@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.example.kalantarbashi.Core.Account;
 import com.example.kalantarbashi.Core.ServerThread;
 
+import java.io.DataOutputStream;
 import java.math.BigInteger;
 import java.net.InetAddress;
 import java.net.ServerSocket;
@@ -45,7 +46,15 @@ public class FindingActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(ListeningActivity.account != null)
-                    startActivity(new Intent(FindingActivity.this,ListeningActivity.class));
+                    try {
+                        DataOutputStream dos = new DataOutputStream(ListeningActivity.account.getSocket().getOutputStream());
+                        dos.writeUTF("connect");
+                        dos.flush();
+                        dos.close();
+                        startActivity(new Intent(FindingActivity.this, ListeningActivity.class));
+                    }catch (Exception e){
+
+                    }
             }
         });
 
